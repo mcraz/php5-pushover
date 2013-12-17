@@ -12,12 +12,10 @@ Three quick start options are available:
 
 * [Create a Pushover account](https://github.com/twbs/bootstrap/archive/v3.0.3.zip).
 * [Create an Application] (https://pushover.net/apps/build).
-* Clone `pushover.class.php` to your application root.
+* Include `pushover.class.php` into your application.
 * Start sending push notification.
 
 ## How to use ?
-
-Check out the `sample.php` file for examples.
 
 ### User/Group Validation Example
 ```
@@ -25,9 +23,7 @@ require dirname(__FILE__).'/pushover.class.php';
 
 $pushover = new pushover(array('apiToken' => 'XXxXX'));
 
-$user = "xxXxx";
-
-if($pushover->validate($user))
+if($pushover->validate("userORgroupKEY"))
 	echo "User/Group is Valid";
 else
 	echo "User/Group is InValid";
@@ -44,6 +40,8 @@ $message = "Checkout this awesome php5 api for Pushover that doen't even require
 print_r($pushover->notify($user,$message,$option));
 
 ```
+
+Check out the `sample.php` file for sample codes.
 
 # License
 The code is licensed under [WTFPL](http://www.wtfpl.net/). Get a copy for yourself [here](http://www.wtfpl.net/txt/copying/).
